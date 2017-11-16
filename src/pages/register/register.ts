@@ -8,10 +8,5 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class RegisterPage {
 
-  constructor(private navCtrl: NavController, private navParams: NavParams) {
-  }
 
-  register() {
-
-  }
 }

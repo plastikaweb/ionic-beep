@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { messagesList } from '../../mocks/messages.mock';
+import { Message } from '../../models/message';
 
 @IonicPage()
 @Component({
@@ -8,11 +10,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class InboxPage {
 
+  messagesList: Message[] = messagesList;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad InboxPage');
+    console.log(this.messagesList);
   }
 
 }
