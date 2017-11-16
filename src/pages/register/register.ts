@@ -3,16 +3,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-login',
-  templateUrl: 'login.html'
+  selector: 'page-register',
+  templateUrl: 'register.html'
 })
-export class LoginPage {
+export class RegisterPage {
 
   constructor(private navCtrl: NavController, private navParams: NavParams) {
   }
 
-  navigateToPage(page: string) {
-    page === 'TabsPage' ? this.navCtrl.setRoot(page) : this.navCtrl.push(page);
-  }
+  register() {
 
+  }
 }

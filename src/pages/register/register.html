@@ -1,15 +1,13 @@
 <ion-header>
 
   <ion-navbar>
-	<ion-title>Login</ion-title>
+	<ion-title>Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <img src="assets/imgs/beep.svg" alt="beep" class="logo">
-
   <ion-card>
 	<ion-card-content>
 	  <ion-item>
@@ -26,8 +24,7 @@
 	  </ion-item>
 	</ion-card-content>
 	<ion-row padding float-right>
-	  <button ion-button (click)="navigateToPage('RegisterPage')" color="secondary" margin-right>Register</button>
-	  <button ion-button (click)="navigateToPage('TabsPage')" color="primary">Login</button>
+	  <button ion-button (click)="register()">Register</button>
 	</ion-row>
   </ion-card>
 </ion-content>
