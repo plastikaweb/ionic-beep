@@ -5,7 +5,7 @@ import { Account } from '../../models/account';
 
 @Component({
   selector: 'register-form',
-  templateUrl: 'register-form.html'
+  templateUrl: 'register-form.component.html'
 })
 export class RegisterFormComponent {
   account = {} as Account;
