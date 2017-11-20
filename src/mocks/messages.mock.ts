@@ -1,7 +1,7 @@
 import { Message } from '../models/message';
-import { userList } from './users.mock';
+import { profiles } from './profiles.mock';
 
-export const messagesList: Message[] = userList.map(
-  user => ({ user, date: new Date(), lastMessage: 'lorem ipsum cod finitum van ponri an catastic vire mori mementum' +
+export const messagesList: Message[] = profiles.map(
+  profile => ({ profile, date: new Date(), lastMessage: 'lorem ipsum cod finitum van ponri an catastic vire mori mementum' +
   ' cite' })
 );

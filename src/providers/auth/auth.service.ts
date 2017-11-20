@@ -9,6 +9,10 @@ export class AuthService {
   constructor(private afAuth: AngularFireAuth) {
   }
 
+  getAuthenticateduser() {
+    return this.afAuth.authState;
+  }
+
   async register(account: Account) {
     try {
       return <Login> {

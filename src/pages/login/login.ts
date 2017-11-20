@@ -13,18 +13,18 @@ export class LoginPage {
   }
 
   login(event: Login) {
-    if (!event.error) {
-      this.toast.create({
-        message: `Welcome to Beep, ${event.result.email}`,
-        duration: 3000
-      }).present();
-      this.navCtrl.setRoot('ProfilePage');
-    } else {
-      this.toast.create({
-        message: event.error.message,
-        duration: 3000
-      }).present();
-    }
+      if (!event.error) {
+        this.toast.create({
+          message: `Welcome to Beep, ${event.result.email}`,
+          duration: 3000
+        }).present();
+        this.navCtrl.setRoot('EditProfilePage');
+      } else {
+        this.toast.create({
+          message: event.error.message,
+          duration: 3000
+        }).present();
+      }
   }
 
 }

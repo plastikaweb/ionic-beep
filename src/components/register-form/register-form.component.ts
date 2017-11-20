@@ -12,7 +12,7 @@ export class RegisterFormComponent {
   account = {} as Account;
   @Output() registerStatus: EventEmitter<Login>;
 
-  constructor(private authService: AuthService, private toast: ToastController) {
+  constructor(private authService: AuthService) {
     this.registerStatus = new EventEmitter<Login>();
   }
 
