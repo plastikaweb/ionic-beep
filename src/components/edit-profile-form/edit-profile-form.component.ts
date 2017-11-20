@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, OnDestroy, Output } from '@angular/core';
 import { User } from 'firebase';
 import { Subscription } from 'rxjs/Subscription';
 import { Profile } from '../../models/profile';
@@ -13,8 +13,11 @@ export class EditProfileFormComponent implements OnDestroy {
   private authenticatedUser$: Subscription;
   private authenticateduser: User;
   profile = {} as Profile;
+  @Output() saveProfileResult: EventEmitter<boolean>;
 
   constructor(private data: DataService, private auth: AuthService) {
+    this.saveProfileResult = new EventEmitter<boolean>();
+
     this.authenticatedUser$ = this.auth.getAuthenticateduser()
       .subscribe((user: User) => {
         this.authenticateduser = user;
@@ -29,7 +32,7 @@ export class EditProfileFormComponent implements OnDestroy {
     if (this.authenticateduser) {
       this.profile.email = this.authenticateduser.email;
       const result = await this.data.saveProfile(this.authenticateduser, this.profile);
-      console.log(result);
+      this.saveProfileResult.emit(result);
     }
   }
 }

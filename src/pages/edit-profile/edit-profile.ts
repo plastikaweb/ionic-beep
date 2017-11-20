@@ -11,8 +11,8 @@ export class EditProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EditProfilePage');
+  saveProfileResult(event: boolean) {
+    event ? this.navCtrl.setRoot('TabsPage') : console.log('error');
   }
 
 }
