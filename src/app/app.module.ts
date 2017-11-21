@@ -1,4 +1,5 @@
 import { ErrorHandler, NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -21,7 +22,8 @@ import { FIREBASE } from './config/firebase.config';
     IonicModule.forRoot(MyApp),
     AngularFireModule.initializeApp(FIREBASE),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    FormsModule
   ],
   bootstrap: [ IonicApp ],
   entryComponents: [
