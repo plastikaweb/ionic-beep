@@ -19,4 +19,8 @@ export class InboxPage {
     console.log(this.messagesList);
   }
 
+  navigateToSearchUserPage() {
+    this.navCtrl.push('SearchUserPage');
+  }
+
 }
