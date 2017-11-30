@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { User } from 'firebase';
 import { Loading, LoadingController } from 'ionic-angular';
 import { Profile } from '../../models/profile';
@@ -11,9 +11,13 @@ import { DataService } from '../../providers/data/data.service';
 })
 export class ProfileViewComponent implements OnInit {
   userProfile: Profile;
-  loader: Loading;
+  private authUser: User;
+  private loader: Loading;
+
+  @Output() existingProfile: EventEmitter<Profile>;
 
   constructor(private data: DataService, private auth: AuthService, private loading: LoadingController) {
+    this.existingProfile = new EventEmitter<Profile>();
     this.loader = this.loading.create({
       content: 'Loading profile...'
     });
@@ -28,6 +32,7 @@ export class ProfileViewComponent implements OnInit {
           .subscribe((action) => {
             this.loader.dismiss();
             this.userProfile = <Profile>action.payload.val();
+            this.existingProfile.emit(this.userProfile);
           }))
     ;
   }
