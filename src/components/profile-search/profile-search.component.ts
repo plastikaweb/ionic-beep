@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { DataService } from '../../providers/data/data.service';
 import { Profile } from '../../models/profile';
+import { DataService } from '../../providers/data/data.service';
 
 @Component({
   selector: 'profile-search',
@@ -13,7 +13,8 @@ export class ProfileSearchComponent {
   constructor(private data: DataService) {}
 
   searchUser() {
-    this.data.searchUser(this.query).subscribe((profiles: Profile[]) => {
+    const trimmedQuery = this.query.trim();
+    this.data.searchUser(trimmedQuery).subscribe((profiles: Profile[]) => {
       this.profileList = profiles;
     });
   }
